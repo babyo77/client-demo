@@ -55,12 +55,12 @@ export default function AnimatedFeatures() {
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8 items-center max-w-full mx-auto">
+      <div className="grid  lg:grid-cols-2 gap-8 items-center max-w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative"
+          className="relative hidden md:block"
         >
           <div className="relative z-10">
             <motion.div
@@ -84,6 +84,48 @@ export default function AnimatedFeatures() {
             className="absolute top-0 right-0 translate-x-1/2 z-0"
           >
             <div className="bg-gray-100 rounded-full overflow-hidden w-[450px] h-[450px]">
+              <Image
+                src="https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg"
+                alt="Feature illustration"
+                width={500}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* mobile */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative md:hidden mb-14 w-full max-w-[300px] sm:max-w-[400px] lg:max-w-none mx-auto"
+        >
+          <div className="relative z-10">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-rose-700/90 text-white p-6 sm:p-8 rounded-full aspect-square flex items-center justify-center max-w-[280px] sm:max-w-[320px] lg:max-w-md mx-auto lg:mx-0"
+            >
+              <div className="text-center lg:text-left">
+                <h4 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4">
+                  {activeFeature.title}
+                </h4>
+                <p className="text-sm sm:text-base text-rose-100">
+                  {activeFeature.description}
+                </p>
+              </div>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, x: [0, 10], y: [0, -10] }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:top-0 lg:left-auto lg:right-0 lg:translate-x-1/4 lg:-translate-y-1/4 z-0"
+          >
+            <div className="bg-gray-100 rounded-full overflow-hidden w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] lg:w-[350px] lg:h-[350px]">
               <Image
                 src="https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg"
                 alt="Feature illustration"
